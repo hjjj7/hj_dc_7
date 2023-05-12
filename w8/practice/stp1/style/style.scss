@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@media (width < 600px) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+
+.wrapper {
+  padding-block: 2rem;
+}
+
+.card {
+  &__img {
+  }
+}
