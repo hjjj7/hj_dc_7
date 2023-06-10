@@ -15,29 +15,152 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui;
-  font-size: 1.125rem;
+  font-family: "Nanum Gothic";
+  font-size: 16px;
   line-height: 1.5;
 }
 
+header .wrapper {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .hdanimTarget {
+  font-size: 47px;
+}
+
 section {
+  font-family: "Nanum Gothic";
+  font-size: 15px;
   overflow: hidden;
 }
 
 .wrapper {
-  width: min(60ch, 100% - 4rem);
+  justify-content: center;
+  display: flex;
+  width: min(100ch, 100% - 4rem);
   min-height: max(600px, 100dvh);
   margin-inline: auto;
-  padding-inline: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+.wrapper .content p {
+  width: 100%;
 }
 
 .content {
-  border: 1px solid red;
+  width: 100%;
+  padding: 0px;
 }
 
+#section0 {
+  background-color: black;
+  color: white;
+}
+#section0.triggered .hdanimTarget {
+  display: inline-block;
+  overflow: hidden;
+}
+#section0.triggered .hdanimTarget span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  animation: textFadeIn 3s ease-in-out forwards;
+}
+#section0.triggered .hdanimTarget span:nth-child(1) {
+  animation-delay: calc(
+              0.1s * 1
+            );
+}
+#section0.triggered .hdanimTarget span:nth-child(2) {
+  animation-delay: calc(
+              0.1s * 2
+            );
+}
+#section0.triggered .hdanimTarget span:nth-child(3) {
+  animation-delay: calc(
+              0.1s * 3
+            );
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+#section0 {
+  position: relative;
+}
+#section0 .panimTarget {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.5s;
+  transition-delay: 3s;
+}
+#section0.triggered .panimTarget {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#section1 {
+  color: white;
+}
+#section1 .wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+#section1 h1 {
+  display: inline;
+}
+#section1 img {
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+#section1 .hdanimTarget {
+  position: relative;
+  overflow: hidden;
+}
+#section1 .hdanimTarget:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 90%, #ffffff);
+  animation: typing 5s linear infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .wrapper {
+    align-items: center;
+  }
+  .content {
+    margin-block: 50px;
+  }
+}
+#section2 .wrapper {
+  display: flex;
+  gap: 21px;
+}
+#section2 img {
+  width: 500px;
+}
 #section2 .animTarget {
   transform: scale(0);
   transition: transform 500ms ease-out;
@@ -46,6 +169,30 @@ section {
   transform: scale(1);
 }
 
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    padding: 12px;
+    display: grid;
+    justify-content: center;
+  }
+  p {
+    max-width: 100%;
+    padding: 32px;
+  }
+}
+#section3 {
+  color: white;
+}
+#section3 .wrapper {
+  gap: 0.75rem;
+}
+#section3 img {
+  width: 500px;
+}
 #section3 .content .animTarget {
   transform: translateX(100vw);
   transition: transform 500ms ease-out;
@@ -54,6 +201,14 @@ section {
   transform: translateX(0);
 }
 
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+#section4 .wrapper {
+  gap: 24px;
+}
 #section4 .content.animTarget {
   transition: transform 500ms ease-out, border 500ms ease-out;
 }
@@ -66,14 +221,206 @@ section {
   transition: transform 500ms ease-out;
 }
 #section4.triggered .content.animTarget {
-  background-color: dodgerblue;
+  background-color: rgb(255, 255, 255);
   border: 0px solid transparent;
+  border-radius: 12px;
+  padding: 32px;
 }
 #section4.triggered h2.animTarget {
   transform: translateX(0);
 }
 #section4.triggered p.animTarget {
   transform: translateX(0);
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+#section5 {
+  color: white;
+  justify-content: center;
+}
+#section5 .wrapper {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+}
+#section5 .wrapper img {
+  width: 100%;
+  grid-column: 1/span 3;
+  grid-row: 1;
+  z-index: 2;
+}
+#section5 .animTarget {
+  opacity: 0;
+}
+#section5.triggered .animTarget {
+  opacity: 1;
+  animation: bounceInRight 2s ease-out;
+}
+
+@keyframes bounceInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-25%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+#section6 {
+  gap: 1.5rem;
+}
+#section6 img {
+  width: 900px;
+}
+#section6 .animTarget {
+  transform: scale(0);
+  transition: transform 1000ms ease-out;
+}
+#section6.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section7 {
+  color: white;
+}
+#section7 .animTarget {
+  opacity: 0;
+  visibility: hidden;
+}
+#section7.triggered .animTarget {
+  opacity: 1;
+  visibility: visible;
+}
+#section7.triggered .animTarget .hhanimTarget {
+  display: inline-block;
+  overflow: hidden;
+}
+#section7.triggered .animTarget .hhanimTarget span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  animation: textFadeIn 3s ease-in-out forwards;
+}
+#section7.triggered .animTarget .hhanimTarget span:nth-child(1) {
+  animation-delay: calc(
+                0.1s * 1
+              );
+}
+#section7.triggered .animTarget .hhanimTarget span:nth-child(2) {
+  animation-delay: calc(
+                0.1s * 2
+              );
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+#section8 {
+  position: relative;
+}
+#section8 .hhanimTarget {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.5s;
+  transition-delay: 1s;
+}
+#section8.triggered .hhanimTarget {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+#endanimTriger {
+  line-height: 36px;
+  color: white;
+}
+#endanimTriger h2 {
+  font-size: 37px;
+}
+#endanimTriger span {
+  font-weight: 700;
+}
+#endanimTriger .content {
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    padding: 12px;
+    display: grid;
+    justify-content: center;
+  }
+  span {
+    padding: 12px;
+    display: grid;
+    justify-content: center;
+  }
+  p {
+    max-width: 100%;
+    padding: 32px;
+  }
+  .h2star {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.star-bigcontainer {
+  display: flex;
+}
+
+.h2star {
+  display: flex;
+}
+
+.star-container {
+  transition: background-color 250ms ease-in-out;
+}
+.star-container:hover {
+  background-color: rgb(185, 183, 207);
+}
+
+.star--clicked {
+  background-color: rgb(255, 238, 3);
+}
+.star--clicked:hover {
+  background-color: rgb(255, 255, 4);
 }
 
 header {
@@ -83,11 +430,11 @@ header {
 }
 
 section:nth-child(even) {
-  background-color: darkolivegreen;
+  background-color: rgb(180, 162, 177);
 }
 
 section:nth-of-type(odd) {
-  background-color: cornsilk;
+  background-color: rgb(58, 55, 63);
 }
 
 .stickyWrapper {

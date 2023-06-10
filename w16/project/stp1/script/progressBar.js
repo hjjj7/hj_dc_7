@@ -61,3 +61,21 @@ elems.forEach((eachElem) => {
 });
 
 // observer.observe();
+
+// const starElement = document.querySelector(
+//   ".star-container"
+// );
+
+// starElement.onclick = function () {
+//   starElement.classList.toggle("star--clicked");
+// };
+
+const starElements = document.querySelectorAll(
+  ".star-container"
+);
+
+starElements.forEach((starElement) => {
+  starElement.onclick = function () {
+    starElement.classList.toggle("star--clicked");
+  };
+});
