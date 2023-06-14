@@ -20,6 +20,11 @@ body {
   line-height: 1.5;
 }
 
+header {
+  text-align: center;
+  text-wrap: balance;
+  word-break: keep-all;
+}
 header .wrapper {
   margin-inline: auto;
   display: flex;
@@ -146,14 +151,6 @@ section {
     width: 100%;
   }
 }
-@media (max-width: 800px) {
-  .wrapper {
-    align-items: center;
-  }
-  .content {
-    margin-block: 50px;
-  }
-}
 #section2 .wrapper {
   display: flex;
   gap: 21px;
@@ -169,21 +166,6 @@ section {
   transform: scale(1);
 }
 
-@media (max-width: 1000px) {
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  h2 {
-    padding: 12px;
-    display: grid;
-    justify-content: center;
-  }
-  p {
-    max-width: 100%;
-    padding: 32px;
-  }
-}
 #section3 {
   color: white;
 }
@@ -201,11 +183,6 @@ section {
   transform: translateX(0);
 }
 
-@media (max-width: 1000px) {
-  .wrapper {
-    flex-direction: column;
-  }
-}
 #section4 .wrapper {
   gap: 24px;
 }
@@ -233,11 +210,6 @@ section {
   transform: translateX(0);
 }
 
-@media (max-width: 1000px) {
-  .wrapper {
-    flex-direction: column;
-  }
-}
 #section5 {
   color: white;
   justify-content: center;
@@ -276,11 +248,6 @@ section {
   }
   100% {
     transform: translateX(0);
-  }
-}
-@media (max-width: 1000px) {
-  .wrapper {
-    flex-direction: column;
   }
 }
 #section6 {
@@ -377,17 +344,19 @@ section {
   position: relative;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+  img {
+    max-width: 600px;
+    padding-bottom: 20px;
+  }
   .wrapper {
     flex-direction: column;
     align-items: center;
   }
-  h2 {
-    padding: 12px;
-    display: grid;
-    justify-content: center;
+  .content {
+    margin-block: 50px;
   }
-  span {
+  h2 {
     padding: 12px;
     display: grid;
     justify-content: center;
@@ -396,11 +365,17 @@ section {
     max-width: 100%;
     padding: 32px;
   }
-  .h2star {
-    flex-direction: column;
-    align-items: center;
+  span {
+    padding: 12px;
+    display: grid;
+    justify-content: center;
   }
 }
+.h2star {
+  flex-direction: column;
+  align-items: center;
+}
+
 .star-bigcontainer {
   display: flex;
 }
@@ -421,12 +396,6 @@ section {
 }
 .star--clicked:hover {
   background-color: rgb(255, 255, 4);
-}
-
-header {
-  text-align: center;
-  text-wrap: balance;
-  word-break: keep-all;
 }
 
 section:nth-child(even) {
@@ -515,7 +484,7 @@ footer .wrapper {
   min-height: max(100dvh, 2rem);
 }
 
-@media (width < 67.5rem) {
+@media (max-width: 67.5rem) {
   .stickyWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
@@ -558,7 +527,7 @@ footer .wrapper {
     grid-row: 1;
   }
 }
-@media (width < 59.1875rem) {
+@media (width < 60.625rem) {
   aside ol {
     justify-content: flex-start;
   }
