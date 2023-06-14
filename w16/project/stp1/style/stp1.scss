@@ -8,6 +8,7 @@ $animation-delay: 0.1s;
 *,
 *::before,
 ::after {
+  margin-inline: auto;
   box-sizing: border-box;
 }
 
@@ -21,6 +22,7 @@ html {
 }
 
 body {
+  // width: fit-content;
   margin: 0;
   font-family: "Nanum Gothic";
   font-size: 16px;
@@ -48,18 +50,13 @@ section {
   font-size: 15px;
   overflow: hidden;
 }
-.wrapper {
-  .content {
-    p {
-      width: 100%;
-    }
-  }
 
+.wrapper {
   justify-content: center;
   display: flex;
 
   width: min(100ch, 100% - 4rem);
-  min-height: max(600px, 100dvh);
+  min-height: max(400px, 100dvh);
   margin-inline: auto;
 
   align-items: center;
@@ -140,8 +137,9 @@ section {
   }
   img {
     overflow: hidden;
-    max-width: 100%;
-    height: auto;
+    // max-width: 100%;
+    width: 100%;
+    // height: auto;
   }
   .hdanimTarget {
     position: relative;
@@ -178,7 +176,8 @@ section {
     gap: 21px;
   }
   img {
-    width: 500px;
+    overflow: hidden;
+    width: 100%;
   }
   .animTarget {
     transform: scale(0);
@@ -195,9 +194,12 @@ section {
   color: white;
   .wrapper {
     gap: 0.75rem;
+    overflow: hidden;
   }
+
   img {
-    width: 500px;
+    overflow: hidden;
+    width: 100%;
   }
   .content {
     .animTarget {
@@ -290,7 +292,7 @@ section {
 #section6 {
   gap: 1.5rem;
   img {
-    width: 900px;
+    width: 100%;
   }
   .animTarget {
     transform: scale(0);
@@ -392,31 +394,37 @@ section {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 930px) {
   img {
-    max-width: 600px;
-    padding-bottom: 20px;
+    max-width: 870px;
+    width: 100%;
+    padding-bottom: 6px;
   }
   .wrapper {
+    margin: auto;
     flex-direction: column;
     align-items: center;
+    padding-block: 16px;
   }
   .content {
-    margin-block: 50px;
+    // margin-block: 50px;
   }
   h2 {
-    padding: 12px;
+    // padding: 12px;
     display: grid;
     justify-content: center;
   }
   p {
     max-width: 100%;
-    padding: 32px;
+    // padding: 32px;
   }
   span {
-    padding: 12px;
+    // padding: 12px;
     display: grid;
     justify-content: center;
+  }
+  svg {
+    max-width: 70px;
   }
 }
 .h2star {
@@ -534,7 +542,7 @@ footer {
   }
 }
 
-@media (max-width: 67.5rem) {
+@media (max-width: 930px) {
   .stickyWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
@@ -563,7 +571,7 @@ footer {
     ol {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 3rem;
 
       a:first-of-type li {
@@ -581,7 +589,7 @@ footer {
   }
 }
 
-@media (width < 60.625rem) {
+@media (width < 930px) {
   aside {
     ol {
       justify-content: flex-start;
