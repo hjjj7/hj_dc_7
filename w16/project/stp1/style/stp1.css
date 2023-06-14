@@ -531,8 +531,3 @@ footer .wrapper {
     grid-row: 1;
   }
 }
-@media (width < 930px) {
-  aside ol {
-    justify-content: flex-start;
-  }
-}

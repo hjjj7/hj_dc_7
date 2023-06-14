@@ -22,7 +22,6 @@ html {
 }
 
 body {
-  // width: fit-content;
   margin: 0;
   font-family: "Nanum Gothic";
   font-size: 16px;
@@ -112,86 +111,6 @@ section {
   }
 }
 
-// #section0 {
-//   background-color: black;
-//   color: white;
-
-//   .hdanimTarget {
-//     &.triggered {
-//       display: inline-block;
-//       overflow: hidden;
-
-//       &.span {
-//         display: inline-block;
-//         opacity: 0;
-//         filter: blur(8px);
-//         animation: textFadeIn $animation-duration
-//           ease-in-out forwards;
-
-//         @for $i from 1 to 4 {
-//           &:nth-child(#{$i}) {
-//             animation-delay: calc(
-//               #{$animation-delay} * #{$i}
-//             );
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @keyframes textFadeIn {
-//   0% {
-//     opacity: 0;
-//     filter: blur(8px);
-//   }
-//   100% {
-//     opacity: 1;
-//     filter: blur(0);
-//   }
-// }
-
-// #section0 {
-//   background-color: black;
-//   color: white;
-//   .hdanimTarget {
-//     opacity: 1;
-//   }
-//   &.triggered {
-//     .hdanimTarget {
-//       display: inline-block;
-//       overflow: hidden;
-
-//       &.span {
-//         display: inline-block;
-//         opacity: 0;
-//         filter: blur(8px);
-//         animation: textFadeIn $animation-duration
-//           ease-in-out forwards;
-
-//         @for $i from 1 to 4 {
-//           &:nth-child(#{$i}) {
-//             animation-delay: calc(
-//               #{$animation-delay} * #{$i}
-//             );
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @keyframes textFadeIn {
-//   0% {
-//     opacity: 0;
-//     filter: blur(8px);
-//   }
-//   100% {
-//     opacity: 1;
-//     filter: blur(0);
-//   }
-// }
-
 #section0 {
   position: relative;
 
@@ -221,9 +140,8 @@ section {
   }
   img {
     overflow: hidden;
-    // max-width: 100%;
+
     width: 100%;
-    // height: auto;
   }
   .hdanimTarget {
     position: relative;
@@ -491,19 +409,15 @@ section {
     padding-block: 16px;
   }
   .content {
-    // margin-block: 50px;
   }
   h2 {
-    // padding: 12px;
     display: grid;
     justify-content: center;
   }
   p {
     max-width: 100%;
-    // padding: 32px;
   }
   span {
-    // padding: 12px;
     display: grid;
     justify-content: center;
   }
@@ -670,13 +584,5 @@ footer {
   .progressBar {
     grid-column: 1;
     grid-row: 1;
-  }
-}
-
-@media (width < 930px) {
-  aside {
-    ol {
-      justify-content: flex-start;
-    }
   }
 }
