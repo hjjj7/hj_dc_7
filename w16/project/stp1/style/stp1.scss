@@ -71,27 +71,31 @@ section {
 #section0 {
   background-color: black;
   color: white;
+
   .hdanimTarget {
-  }
-  &.triggered {
-    .hdanimTarget {
+    display: inline-block;
+    overflow: hidden;
+
+    span {
       display: inline-block;
-      overflow: hidden;
+      opacity: 0;
+      filter: blur(8px);
+      animation: textFadeIn $animation-duration
+        ease-in-out forwards;
 
-      span {
-        display: inline-block;
-        opacity: 0;
-        filter: blur(8px);
-        animation: textFadeIn $animation-duration
-          ease-in-out forwards;
-
-        @for $i from 1 through 3 {
-          &:nth-child(#{$i}) {
-            animation-delay: calc(
-              #{$animation-delay} * #{$i}
-            );
-          }
+      @for $i from 1 to 4 {
+        &:nth-child(#{$i}) {
+          animation-delay: calc(
+            #{$animation-delay} * #{$i}
+          );
         }
+      }
+    }
+
+    &.triggered {
+      span {
+        opacity: 1;
+        filter: blur(0);
       }
     }
   }
@@ -107,6 +111,86 @@ section {
     filter: blur(0);
   }
 }
+
+// #section0 {
+//   background-color: black;
+//   color: white;
+
+//   .hdanimTarget {
+//     &.triggered {
+//       display: inline-block;
+//       overflow: hidden;
+
+//       &.span {
+//         display: inline-block;
+//         opacity: 0;
+//         filter: blur(8px);
+//         animation: textFadeIn $animation-duration
+//           ease-in-out forwards;
+
+//         @for $i from 1 to 4 {
+//           &:nth-child(#{$i}) {
+//             animation-delay: calc(
+//               #{$animation-delay} * #{$i}
+//             );
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes textFadeIn {
+//   0% {
+//     opacity: 0;
+//     filter: blur(8px);
+//   }
+//   100% {
+//     opacity: 1;
+//     filter: blur(0);
+//   }
+// }
+
+// #section0 {
+//   background-color: black;
+//   color: white;
+//   .hdanimTarget {
+//     opacity: 1;
+//   }
+//   &.triggered {
+//     .hdanimTarget {
+//       display: inline-block;
+//       overflow: hidden;
+
+//       &.span {
+//         display: inline-block;
+//         opacity: 0;
+//         filter: blur(8px);
+//         animation: textFadeIn $animation-duration
+//           ease-in-out forwards;
+
+//         @for $i from 1 to 4 {
+//           &:nth-child(#{$i}) {
+//             animation-delay: calc(
+//               #{$animation-delay} * #{$i}
+//             );
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes textFadeIn {
+//   0% {
+//     opacity: 0;
+//     filter: blur(8px);
+//   }
+//   100% {
+//     opacity: 1;
+//     filter: blur(0);
+//   }
+// }
 
 #section0 {
   position: relative;
