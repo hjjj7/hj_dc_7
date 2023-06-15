@@ -257,6 +257,8 @@ section {
     grid-row: 1;
     z-index: 1;
     img {
+      display: flex;
+      max-width: fit-content;
       width: 100%;
       grid-column: 1 / span 3;
       grid-row: 1;
@@ -360,7 +362,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s, transform 0.5s;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
   }
 
   &.triggered {
